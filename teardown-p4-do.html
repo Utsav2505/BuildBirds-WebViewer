@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teardown 01 — P4 — Do Something</title>
+<style>
+  @page { size:A5 portrait; margin:0; }
+  :root{ --ink:#141210; --paper:#FFFFFF; --saffron:#EF6A1A; --blue:#123A63; --brand:#2B5BD7; --muted:#6E675D;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace; --sans:"Helvetica Neue",Arial,"Segoe UI",sans-serif; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:#B7B2A7; display:flex; justify-content:center; padding:24px; font-family:var(--sans); color:var(--ink); }
+  .page{ width:148mm; height:210mm; background:var(--paper); padding:9mm; display:flex; flex-direction:column;
+    box-shadow:0 8px 40px rgba(0,0,0,.35); overflow:hidden; }
+
+  /* Brand lockup — the ONLY branded panel */
+  .brand{ display:flex; align-items:center; gap:3mm; }
+  .logo{ width:13mm; height:13mm; border:1.4pt dashed var(--brand); border-radius:2mm; display:flex; align-items:center;
+    justify-content:center; font-family:var(--mono); font-size:5.4pt; color:var(--brand); text-align:center; line-height:1.2; }
+  .wm{ line-height:1; }
+  .wm .name{ font-weight:800; font-size:19pt; letter-spacing:-0.02em; }
+  .wm .name .b{ color:var(--brand); }
+  .wm .tl{ font-family:var(--mono); font-size:6pt; letter-spacing:.22em; color:var(--muted); margin-top:1.4mm; }
+  .rule{ height:2.4pt; background:var(--ink); margin:4mm 0 3mm; }
+
+  .build{ border:1.8pt solid var(--ink); }
+  .build .bh{ background:var(--saffron); color:#3a1703; font-family:var(--mono); font-weight:700; font-size:8.4pt;
+    letter-spacing:.08em; padding:2mm 3mm; }
+  .build .bb{ padding:2.8mm 3mm; }
+  .build .desc{ font-size:8.4pt; line-height:1.4; }
+  .build .desc b{ font-weight:700; }
+  .meta{ display:flex; flex-wrap:wrap; gap:2mm; margin-top:2.4mm; }
+  .meta span{ font-family:var(--mono); font-size:6.2pt; letter-spacing:.04em; border:1pt solid var(--ink); padding:1.2mm 2mm; }
+  .loop{ font-family:var(--mono); font-size:7.4pt; font-weight:700; letter-spacing:.06em; margin-top:2.6mm; color:var(--blue); }
+  .why{ font-size:7.4pt; line-height:1.3; margin-top:1.8mm; color:var(--muted); }
+  .why b{ color:var(--ink); font-weight:700; }
+
+  .submit{ border:1.6pt solid var(--ink); border-top:none; background:#faf4ee; padding:2.8mm 3mm; position:relative; }
+  .submit .h{ font-family:var(--mono); font-size:6.6pt; letter-spacing:.12em; color:var(--saffron); text-transform:uppercase; }
+  .submit .t{ font-size:8pt; line-height:1.35; margin-top:1mm; }
+  .submit .t b{ font-weight:700; }
+  .submit .star{ font-weight:700; color:var(--blue); }
+  .bubble{ margin-top:2mm; display:inline-block; background:var(--ink); color:var(--paper); font-family:var(--mono);
+    font-size:6.8pt; padding:1.6mm 2.4mm; border-radius:2mm 2mm 2mm 0; }
+  .bubble .k{ color:var(--saffron); }
+
+  .vault{ margin-top:4mm; }
+  .vault .vh{ font-family:var(--mono); font-size:6.6pt; letter-spacing:.14em; color:var(--muted); text-transform:uppercase; }
+  .grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:2.4mm; margin-top:2mm; }
+  .tile{ border:1.3pt dashed var(--muted); display:flex; flex-direction:column; align-items:center; padding:2mm 1mm; text-align:center; }
+  .tile .sq{ width:13mm; height:13mm; border:1pt solid var(--muted); display:flex; align-items:center; justify-content:center;
+    font-family:var(--mono); font-size:5.6pt; color:var(--muted); }
+  .tile .cp{ font-family:var(--mono); font-size:5.4pt; color:var(--ink); margin-top:1.4mm; line-height:1.25; letter-spacing:.02em; }
+
+  .join{ margin-top:auto; border-top:1.4pt solid var(--ink); padding-top:2.6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .join .l{ font-family:var(--mono); font-size:6.6pt; line-height:1.5; letter-spacing:.04em; }
+  .join .l b{ color:var(--brand); }
+  .join .next{ text-align:right; font-family:var(--mono); font-size:6pt; color:var(--muted); line-height:1.5; }
+  .join .next b{ color:var(--saffron); }
+</style>
+</head>
+<body>
+  <div class="page">
+
+    <div class="brand">
+      <div class="logo">BB<br>logo</div>
+      <div class="wm">
+        <div class="name">Build<span class="b">Birds</span></div>
+        <div class="tl">LEARN · BUILD · INNOVATE · ACHIEVE</div>
+      </div>
+    </div>
+    <div class="rule"></div>
+
+    <div class="build">
+      <div class="bh">BUILD IT · STRAW ROCKET DESIGN LAB</div>
+      <div class="bb">
+        <div class="desc">Build a paper rocket you launch by blowing through a straw. Then design <b>3 versions</b> — different fins, different nose — and test which flies farthest.</div>
+        <div class="meta">
+          <span>SCRAP: paper · tape · a straw</span><span>COST: ₹0</span><span>TIME: 30 min</span><span>LEVEL: easy</span>
+        </div>
+        <div class="loop">PLAN → BUILD → TEST → IMPROVE</div>
+        <div class="why"><b>Why it works:</b> nose cone + fins decide how a rocket flies straight — the same aerodynamics that shape Vikram-1.</div>
+      </div>
+    </div>
+
+    <div class="submit">
+      <div class="h">Post it · get featured</div>
+      <div class="t">Reply to the <b>pinned post</b> on the BuildBirds channel with a photo or video of your 3 designs and the winner. Best builds become a <span class="star">★ BB Featured Builder</span> — a shoutout on the main channel.</div>
+      <div class="bubble"><span class="k">kuchu puchu…</span> tumhara rocket kahan hai? 🥺 (post it, we're waiting)</div>
+    </div>
+
+    <div class="vault">
+      <div class="vh">Scan the vault · everything for this issue</div>
+      <div class="grid">
+        <div class="tile"><div class="sq">QR</div><div class="cp">Full digital notes</div></div>
+        <div class="tile"><div class="sq">QR</div><div class="cp">Animated cutaway</div></div>
+        <div class="tile"><div class="sq">QR</div><div class="cp">OpenRocket · free sim</div></div>
+        <div class="tile"><div class="sq">QR</div><div class="cp">Join the channel</div></div>
+      </div>
+    </div>
+
+    <div class="join">
+      <div class="l">Channel: <b>@BuildBirds</b><br>Instagram: <b>@BuildBirds</b><br>YouTube: <b>BuildBirds</b></div>
+      <div class="next">Next teardown: <b>coming soon</b><br>Teardown № 01 · made for makers<br>educational use only</div>
+    </div>
+
+  </div>
+</body>
+</html>
