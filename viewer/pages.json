@@ -4,9 +4,25 @@
   "pageWidth": "148mm",
   "pageHeight": "210mm",
   "pages": [
-    { "title": "Cover",        "subtitle": "India's next leap into space", "file": "../teardown-p1-cover.html" },
-    { "title": "The Machine",  "subtitle": "Stage by stage",               "file": "../teardown-p2-machine.html" },
-    { "title": "The Showdown", "subtitle": "How it stacks up",             "file": "../teardown-p3-showdown.html" },
-    { "title": "Do Something", "subtitle": "Build your own",               "file": "../teardown-p4-do.html" }
+    {
+      "title": "Cover",
+      "subtitle": "India's next leap into space",
+      "file": "../TearDown-001 Vikram-1/teardown-p1-cover.html"
+    },
+    {
+      "title": "The Machine",
+      "subtitle": "Stage by stage",
+      "file": "../TearDown-001 Vikram-1/teardown-p2-machine.html"
+    },
+    {
+      "title": "The Showdown",
+      "subtitle": "How it stacks up",
+      "file": "../TearDown-001 Vikram-1/teardown-p3-showdown.html"
+    },
+    {
+      "title": "Do Something",
+      "subtitle": "Build your own",
+      "file": "../TearDown-001 Vikram-1/teardown-p4-do.html"
+    }
   ]
 }
