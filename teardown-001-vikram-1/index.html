@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vikram-1: India's First Private Orbital Rocket, Taken Apart | BuildBirds TearDown 001</title>
+  <meta name="description"
+    content="A full teardown of Vikram-1, the Skyroot Aerospace rocket that became India's first privately built launch vehicle to reach orbit on 18 July 2026. Specs, stages, solid vs liquid propulsion, its 3D-printed Raman-1 engine, and a straw-rocket build you can do today.">
+  <link rel="canonical" href="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/">
+  <meta name="author" content="BuildBirds">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="keywords"
+    content="Vikram-1, Skyroot Aerospace, India private rocket, Vikram-1 specifications, solid vs liquid propellant, Raman-1 engine, metal 3D printing rocket, Kalam-1200, rocket stages explained, STEM India">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="BuildBirds">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="Vikram-1: India's First Private Orbital Rocket, Taken Apart">
+  <meta property="og:description"
+    content="Specs, stages, solid vs liquid propulsion, the 3D-printed Raman-1 engine — and a straw rocket you can build today. A free, printable teardown for makers and classrooms.">
+  <meta property="og:url" content="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/">
+  <meta property="og:image"
+    content="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="TearDown 001 — Vikram-1, India's first private orbital rocket, taken apart">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vikram-1: India's First Private Orbital Rocket, Taken Apart">
+  <meta name="twitter:description"
+    content="Specs, stages, solid vs liquid propulsion, the 3D-printed Raman-1 engine — and a straw rocket you can build today.">
+  <meta name="twitter:image"
+    content="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png">
+
+  <link rel="icon" href="../logo.png">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --ink: #141210;
+      --paper: #ffffff;
+      --page: #F7F4EF;
+      --saffron: #EF6A1A;
+      --blue: #123A63;
+      --green: #1B6B4A;
+      --muted: #5E584F;
+      --hair: #D8D3C9;
+      --cream: #FAF4EE;
+      --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      --sans: "Helvetica Neue", Arial, "Segoe UI", system-ui, sans-serif;
+      --wrap: 46rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --ink: #F2EEE7;
+        --paper: #17150F;
+        --page: #100E0A;
+        --saffron: #FF8442;
+        --blue: #8FB6E0;
+        --green: #6FC79F;
+        --muted: #A9A196;
+        --hair: #34302A;
+        --cream: #1E1A13;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background: var(--page);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-underline-offset: .18em;
+      text-decoration-thickness: .07em;
+    }
+
+    a:hover {
+      color: var(--saffron);
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--saffron);
+      outline-offset: 2px;
+    }
+
+    .skip {
+      position: absolute;
+      left: -9999px;
+      background: var(--ink);
+      color: var(--paper);
+      padding: .75rem 1rem;
+      z-index: 10;
+    }
+
+    .skip:focus {
+      left: .5rem;
+      top: .5rem;
+    }
+
+    .wrap {
+      max-width: var(--wrap);
+      margin-inline: auto;
+      padding-inline: 1.25rem;
+    }
+
+    /* ── masthead ───────────────────────────── */
+    .top {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .top {
+        background: #000;
+        color: #F2EEE7;
+      }
+    }
+
+    .top .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: .8rem;
+    }
+
+    .top a {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-size: 1.15rem;
+    }
+
+    .top a .o {
+      color: var(--saffron);
+    }
+
+    .top .issue {
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .16em;
+      border: 1.5px solid currentColor;
+      padding: .25rem .5rem;
+      white-space: nowrap;
+    }
+
+    .tri {
+      display: flex;
+      height: 4px;
+    }
+
+    .tri i {
+      flex: 1;
+      background: var(--saffron);
+    }
+
+    .tri i:nth-child(2) {
+      background: var(--hair);
+      flex: 2;
+    }
+
+    .tri i:nth-child(3) {
+      background: var(--green);
+    }
+
+    /* ── breadcrumb ─────────────────────────── */
+    .crumb {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding-block: 1rem .25rem;
+    }
+
+    .crumb ol {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
+    .crumb li:not(:last-child)::after {
+      content: " /";
+      color: var(--hair);
+    }
+
+    /* ── hero ───────────────────────────────── */
+    .kicker {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-top: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 7vw, 3.1rem);
+      line-height: 1.03;
+      letter-spacing: -.03em;
+      margin-top: .5rem;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    .standfirst {
+      font-size: 1.2rem;
+      line-height: 1.45;
+      margin-top: 1rem;
+      color: var(--ink);
+    }
+
+    .byline {
+      font-family: var(--mono);
+      font-size: .72rem;
+      letter-spacing: .06em;
+      color: var(--muted);
+      margin-top: 1rem;
+      text-transform: uppercase;
+    }
+
+    /* ── tl;dr ──────────────────────────────── */
+    .tldr {
+      background: var(--cream);
+      border-left: 5px solid var(--saffron);
+      padding: 1.1rem 1.25rem;
+      margin-top: 2rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .tldr h2 {
+      font-family: var(--mono);
+      font-size: .74rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: .6rem;
+    }
+
+    .tldr ul {
+      padding-left: 1.1rem;
+    }
+
+    .tldr li {
+      margin-block: .35rem;
+    }
+
+    /* ── typography ─────────────────────────── */
+    main section {
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 4.5vw, 1.9rem);
+      line-height: 1.12;
+      letter-spacing: -.02em;
+      margin-bottom: .3rem;
+      font-weight: 800;
+      text-wrap: balance;
+    }
+
+    h2 .o {
+      color: var(--saffron);
+    }
+
+    h3 {
+      font-size: 1.12rem;
+      margin-top: 1.6rem;
+      margin-bottom: .35rem;
+      font-weight: 700;
+    }
+
+    p {
+      margin-top: .85rem;
+    }
+
+    main ul,
+    main ol {
+      margin-top: .85rem;
+      padding-left: 1.3rem;
+    }
+
+    main li {
+      margin-block: .3rem;
+    }
+
+    strong {
+      font-weight: 700;
+    }
+
+    .lead-rule {
+      height: 3px;
+      background: var(--ink);
+      margin-bottom: 1.1rem;
+    }
+
+    /* ── tables ─────────────────────────────── */
+    .tablewrap {
+      overflow-x: auto;
+      margin-top: 1.1rem;
+      border: 1.5px solid var(--ink);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 30rem;
+      font-size: .93rem;
+      background: var(--paper);
+    }
+
+    caption {
+      caption-side: top;
+      text-align: left;
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: .5rem .75rem;
+      background: var(--cream);
+      border-bottom: 1px solid var(--hair);
+    }
+
+    th,
+    td {
+      padding: .6rem .75rem;
+      text-align: left;
+      border-bottom: 1px solid var(--hair);
+      vertical-align: top;
+    }
+
+    thead th {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    thead th.solid {
+      background: var(--saffron);
+      color: #3a1703;
+    }
+
+    tbody th {
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      white-space: nowrap;
+      width: 12rem;
+    }
+
+    tbody tr:last-child th,
+    tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    /* ── timeline ───────────────────────────── */
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1.2rem;
+    }
+
+    .timeline li {
+      position: relative;
+      padding-left: 1.6rem;
+      padding-bottom: 1.1rem;
+      border-left: 2px solid var(--hair);
+      margin-left: .35rem;
+    }
+
+    .timeline li:last-child {
+      border-left-color: transparent;
+      padding-bottom: 0;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: .45rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--saffron);
+    }
+
+    .timeline li.now::before {
+      background: var(--ink);
+    }
+
+    .timeline b {
+      font-family: var(--mono);
+      letter-spacing: .04em;
+      display: block;
+    }
+
+    /* ── page cards ─────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.4rem;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .card {
+      border: 1.5px solid var(--ink);
+      background: var(--paper);
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+
+    .card img {
+      width: 100%;
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .card .body {
+      padding: .8rem .9rem 1rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card .n {
+      font-family: var(--mono);
+      font-size: .66rem;
+      letter-spacing: .12em;
+      color: var(--saffron);
+      text-transform: uppercase;
+    }
+
+    .card h3 {
+      margin: .3rem 0 .3rem;
+      font-size: 1.02rem;
+    }
+
+    .card p {
+      font-size: .88rem;
+      margin: 0 0 .8rem;
+      color: var(--muted);
+    }
+
+    .card .dl {
+      margin-top: auto;
+      font-family: var(--mono);
+      font-size: .68rem;
+      letter-spacing: .06em;
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    /* ── how-to ─────────────────────────────── */
+    .steps {
+      counter-reset: s;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .steps li {
+      counter-increment: s;
+      position: relative;
+      padding-left: 2.6rem;
+      margin-block: .9rem;
+    }
+
+    .steps li::before {
+      content: counter(s, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: .1rem;
+      font-family: var(--mono);
+      font-size: .72rem;
+      font-weight: 700;
+      color: #fff;
+      background: var(--saffron);
+      padding: .2rem .4rem;
+    }
+
+    /* ── faq ────────────────────────────────── */
+    .faq {
+      margin-top: 1.2rem;
+      border-top: 1px solid var(--hair);
+    }
+
+    .faq details {
+      border-bottom: 1px solid var(--hair);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      padding: .9rem 2rem .9rem 0;
+      font-weight: 700;
+      position: relative;
+      list-style: none;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: .3rem;
+      top: .75rem;
+      font-size: 1.4rem;
+      line-height: 1;
+      color: var(--saffron);
+    }
+
+    .faq details[open] summary::after {
+      content: "\2013";
+    }
+
+    .faq .a {
+      padding-bottom: 1rem;
+    }
+
+    .faq .a p:first-child {
+      margin-top: 0;
+    }
+
+    /* ── misc ───────────────────────────────── */
+    .callout {
+      border: 1.5px solid var(--ink);
+      padding: 1rem 1.15rem;
+      margin-top: 1.4rem;
+      background: var(--paper);
+    }
+
+    .callout .h {
+      font-family: var(--mono);
+      font-size: .7rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--saffron);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--paper);
+      padding: .7rem 1.1rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .95rem;
+      border: 1.5px solid var(--ink);
+      margin-top: 1.1rem;
+    }
+
+    .btn:hover {
+      background: var(--saffron);
+      border-color: var(--saffron);
+      color: #fff;
+    }
+
+    figure {
+      margin-top: 1.4rem;
+    }
+
+    figure img {
+      border: 1.5px solid var(--ink);
+      background: #fff;
+    }
+
+    figcaption {
+      font-family: var(--mono);
+      font-size: .68rem;
+      line-height: 1.4;
+      color: var(--muted);
+      margin-top: .5rem;
+    }
+
+    .sources li {
+      font-size: .92rem;
+      margin-block: .45rem;
+      overflow-wrap: anywhere;
+    }
+
+    footer.site {
+      background: var(--ink);
+      color: var(--paper);
+      margin-top: 3.5rem;
+      padding-block: 2rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      footer.site {
+        background: #000;
+      }
+    }
+
+    footer.site a {
+      color: var(--saffron);
+    }
+
+    footer.site .fine {
+      font-family: var(--mono);
+      font-size: .68rem;
+      color: #A79E92;
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://buildbirds.chetnaverse.com/#org",
+        "name": "BuildBirds",
+        "url": "https://buildbirds.chetnaverse.com/",
+        "logo": "https://buildbirds.chetnaverse.com/logo.png",
+        "description": "BuildBirds makes free, printable engineering teardowns that explain how real machines work, for makers, students and classrooms.",
+        "sameAs": ["https://www.instagram.com/buildbirds.in/"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://buildbirds.chetnaverse.com/#website",
+        "url": "https://buildbirds.chetnaverse.com/",
+        "name": "BuildBirds",
+        "publisher": { "@id": "https://buildbirds.chetnaverse.com/#org" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": ["Article", "LearningResource"],
+        "@id": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/#article",
+        "headline": "Vikram-1: India's First Private Orbital Rocket, Taken Apart",
+        "alternativeHeadline": "BuildBirds TearDown 001 — Vikram-1",
+        "description": "A full teardown of Vikram-1, the Skyroot Aerospace rocket that became India's first privately built launch vehicle to reach orbit on 18 July 2026: specifications, stage-by-stage breakdown, solid versus liquid propulsion, its 3D-printed Raman-1 engine, and a straw-rocket experiment.",
+        "url": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/",
+        "mainEntityOfPage": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/",
+        "image": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png",
+        "datePublished": "2026-09-09",
+        "dateModified": "2026-09-09",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "learningResourceType": ["Teardown", "Explainer", "Classroom activity"],
+        "educationalLevel": "Secondary and above",
+        "educationalUse": ["Self study", "Classroom activity"],
+        "teaches": [
+          "How a multi-stage orbital rocket is built and why it sheds stages",
+          "The difference between solid and liquid rocket propulsion",
+          "How metal 3D printing is used to make rocket engines",
+          "How to run a controlled experiment with a straw rocket"
+        ],
+        "author": { "@id": "https://buildbirds.chetnaverse.com/#org" },
+        "publisher": { "@id": "https://buildbirds.chetnaverse.com/#org" },
+        "about": [
+          { "@type": "Thing", "name": "Vikram-1", "sameAs": "https://en.wikipedia.org/wiki/Vikram-1" },
+          { "@type": "Organization", "name": "Skyroot Aerospace", "sameAs": "https://en.wikipedia.org/wiki/Skyroot_Aerospace" },
+          { "@type": "Thing", "name": "Rocket propulsion" },
+          { "@type": "Thing", "name": "Metal 3D printing", "sameAs": "https://en.wikipedia.org/wiki/Selective_laser_melting" }
+        ],
+        "citation": [
+          "https://en.wikipedia.org/wiki/Vikram-1",
+          "https://www.skyroot.in/",
+          "https://space.skyrocket.de/doc_lau/vikram-1.htm"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "BuildBirds", "item": "https://buildbirds.chetnaverse.com/" },
+          { "@type": "ListItem", "position": 2, "name": "TearDown 001: Vikram-1", "item": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/" }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "@id": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/#howto",
+        "name": "Build and test a paper straw rocket",
+        "description": "A controlled-variable experiment: build a paper rocket launched from a drinking straw, then change one thing at a time to make it stay in the air longer.",
+        "totalTime": "PT20M",
+        "estimatedCost": { "@type": "MonetaryAmount", "currency": "INR", "value": "0" },
+        "supply": [
+          { "@type": "HowToSupply", "name": "One sheet of paper" },
+          { "@type": "HowToSupply", "name": "One drinking straw" },
+          { "@type": "HowToSupply", "name": "Sticky tape" }
+        ],
+        "tool": [{ "@type": "HowToTool", "name": "Scissors" }],
+        "step": [
+          { "@type": "HowToStep", "name": "Roll the body", "text": "Roll a strip of paper around the straw to make a tube slightly wider than the straw, then tape the seam so it slides freely." },
+          { "@type": "HowToStep", "name": "Seal the nose", "text": "Fold and tape one end of the tube completely shut. If air escapes past the nose, the rocket will not launch." },
+          { "@type": "HowToStep", "name": "Add fins", "text": "Cut and tape two or three fins to the open end. Fins belong at the tail; fins too small or too far forward make the rocket tumble." },
+          { "@type": "HowToStep", "name": "Launch it", "text": "Slide the rocket onto the straw and blow one hard, consistent breath. Time how long it stays in the air." },
+          { "@type": "HowToStep", "name": "Change one thing", "text": "Change exactly one variable — nose shape, fin shape, or mass — keeping the straw and launch identical. Fly it three times and compare the best times." }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Vikram-1?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Vikram-1 is a four-stage, expendable small-lift orbital launch vehicle built by Skyroot Aerospace, a private Indian company based in Hyderabad. It stands about 22 metres tall, is 1.7 metres in diameter, and is designed to carry up to 350 kg of small satellites to low Earth orbit. It is named after Dr Vikram Sarabhai, the physicist who founded India's space programme." }
+          },
+          {
+            "@type": "Question",
+            "name": "When did Vikram-1 launch and was it successful?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Vikram-1 launched on 18 July 2026 from the Satish Dhawan Space Centre at Sriharikota on a demonstration flight named Aagaman. It reached orbit successfully, making it the first privately developed Indian launch vehicle to do so, and delivered four payloads towards an orbit of roughly 450 km." }
+          },
+          {
+            "@type": "Question",
+            "name": "Who built Vikram-1?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Skyroot Aerospace, founded in 2018 by Pawan Kumar Chandana and Naga Bharath Daka, both former ISRO engineers. The company first flew the suborbital Vikram-S in November 2022, which was India's first privately built rocket to fly at all." }
+          },
+          {
+            "@type": "Question",
+            "name": "How many stages does Vikram-1 have?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Four. The first three are solid-propellant stages called Kalam-1200, Kalam-250 and Kalam-100, producing roughly 1,000 kN, 250 kN and 100 kN of thrust. The fourth is a liquid-propellant orbital adjustment module powered by a cluster of four Raman-1 engines producing about 3.4 kN in total." }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between solid and liquid rocket propellant?",
+            "acceptedAnswer": { "@type": "Answer", "text": "In a solid motor the fuel and oxidiser are pre-mixed into one rubbery block cast into the casing. It is simple, has almost no moving parts and can be stored ready for years, but once lit it cannot be throttled or shut down; it burns to the end. A liquid engine keeps fuel and oxidiser in separate tanks and pumps them into a combustion chamber, so it can be throttled, shut down and restarted, and it is more efficient — roughly 300 to 450 seconds of specific impulse versus 250 to 280 for solids — at the cost of turbopumps, valves and complex plumbing. Vikram-1 uses solid stages for brute lift and a liquid stage for precise orbital insertion." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Vikram-1 3D printed?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Parts of it are. The fourth-stage Raman-1 engine is described by Skyroot as India's first fully 3D-printed orbital engine, and printing cut its production time by roughly 95%. Metal 3D printing lets engineers grow cooling channels inside engine walls that no drill could reach, and collapse hundreds of welded parts into one piece." }
+          },
+          {
+            "@type": "Question",
+            "name": "How fast does a rocket have to go to reach orbit?",
+            "acceptedAnswer": { "@type": "Answer", "text": "About 28,000 km/h, or roughly 7.8 km every second, for low Earth orbit. The important part is that this speed is sideways, not upward. Going straight up only makes you fall back down; orbit means moving sideways fast enough that you keep missing the Earth as you fall." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does a rocket drop its stages?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Once a stage has burned its propellant, the empty casing is dead weight that the remaining engines still have to accelerate. Dropping it means the rest of the rocket gets lighter and therefore faster for the same thrust. That is why launch vehicles are built in stages rather than as one tall tube." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does Vikram-1 matter for India?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It is the first time an Indian company, rather than the national space agency ISRO, has put a payload into orbit. It signals that India now has a private launch industry capable of offering small satellite operators a dedicated ride rather than a shared one, and it validates manufacturing techniques such as metal 3D printing in flight hardware." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use this teardown in a classroom?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The four-page teardown is free to read online, and is published as print-ready A5 PNG and SVG files for classroom handouts. It includes a controlled-variable straw-rocket experiment with a troubleshooting guide, aimed at secondary students and above." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <div class="top">
+    <div class="wrap">
+      <a href="../">Build<span class="o">Birds</span></a>
+      <span class="issue">TEARDOWN 001</span>
+    </div>
+  </div>
+  <div class="tri" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="wrap">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">BuildBirds</a></li>
+        <li>TearDown 001: Vikram-1</li>
+      </ol>
+    </nav>
+  </div>
+
+  <main id="main">
+    <article>
+      <div class="wrap">
+        <p class="kicker">India's next leap into space</p>
+        <h1>Vikram-1: India's first private orbital rocket, taken apart</h1>
+        <p class="standfirst">On <strong>18 July 2026</strong>, a rocket built by a Hyderabad startup lifted off from
+          Sriharikota and put four satellites into orbit. It was the first time an Indian company — not the national
+          space agency — had done it. Here is what is inside it, and why every part is shaped the way it is.</p>
+        <p class="byline">BuildBirds TearDown 001 &middot; Published 9 September 2026 &middot; Free to read, print and
+          teach from</p>
+
+        <div class="tldr">
+          <h2>The short version</h2>
+          <ul>
+            <li><strong>Vikram-1</strong> is a four-stage small-lift launch vehicle from <strong>Skyroot
+                Aerospace</strong>, about 22 m tall, carrying up to <strong>350 kg to low Earth orbit</strong>.</li>
+            <li>It reached orbit on its demonstration flight, <strong>Aagaman</strong>, on 18 July 2026 from the Satish
+              Dhawan Space Centre, targeting roughly <strong>450 km</strong> altitude.</li>
+            <li>Stages 1–3 are <strong>solid</strong> (Kalam-1200 / 250 / 100) for raw lift. Stage 4 is
+              <strong>liquid</strong> — four Raman-1 engines that relight in vacuum to place each satellite precisely.
+            </li>
+            <li>The Raman-1 is described by Skyroot as <strong>India's first fully 3D-printed orbital engine</strong>,
+              cutting build time by about 95%.</li>
+            <li>To orbit, a rocket must fly <strong>sideways at ~28,000 km/h</strong> — going up is the easy half.</li>
+          </ul>
+        </div>
+
+        <section id="what-it-is">
+          <div class="lead-rule"></div>
+          <h2>What Vikram-1 is, and why it matters</h2>
+          <p>Vikram-1 is an expendable, four-stage orbital launch vehicle designed for the small-satellite market. It
+            stands roughly <strong>22 metres</strong> tall — about seven storeys — and is <strong>1.7 metres</strong>
+            across. It is named after <strong>Dr Vikram Sarabhai</strong>, the physicist who founded India's space
+            programme in 1962.</p>
+          <p>The significant part is not the size. It is who built it. <strong>Skyroot Aerospace</strong> was founded in
+            2018 by <strong>Pawan Kumar Chandana</strong> and <strong>Naga Bharath Daka</strong>, two engineers who left
+            ISRO to do it. Eight years later their vehicle reached orbit — the first Indian private launch to manage it.
+            Until then, orbital access from India meant ISRO.</p>
+          <p>For a satellite operator, this is the difference between a <em>rideshare</em> — waiting for a big rocket
+            going roughly your way — and a <em>dedicated ride</em> to the orbit you actually want, when you want it.
+            That is the market small launchers exist to serve.</p>
+
+          <div class="tablewrap">
+            <table>
+              <caption>Vikram-1 &mdash; mission card</caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Operator</th>
+                  <td>Skyroot Aerospace, Hyderabad, India</td>
+                </tr>
+                <tr>
+                  <th scope="row">First orbital flight</th>
+                  <td>18 July 2026 &mdash; mission <em>Aagaman</em></td>
+                </tr>
+                <tr>
+                  <th scope="row">Launch site</th>
+                  <td>Satish Dhawan Space Centre, Sriharikota</td>
+                </tr>
+                <tr>
+                  <th scope="row">Height &amp; diameter</th>
+                  <td>~22 m tall, 1.7 m diameter</td>
+                </tr>
+                <tr>
+                  <th scope="row">Stages</th>
+                  <td>4 &mdash; three solid, one liquid</td>
+                </tr>
+                <tr>
+                  <th scope="row">Payload</th>
+                  <td>Up to 350 kg to low Earth orbit</td>
+                </tr>
+                <tr>
+                  <th scope="row">Lift-off thrust</th>
+                  <td>~1,000 kN from the first stage alone</td>
+                </tr>
+                <tr>
+                  <th scope="row">Target orbit (demo)</th>
+                  <td>~450 km, 60&deg; inclination</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>How Skyroot got here</h3>
+          <ol class="timeline">
+            <li><b>2018</b> Two ISRO engineers leave to found Skyroot Aerospace.</li>
+            <li><b>18 November 2022</b> <em>Vikram-S</em> flies — India's first privately built rocket, but a suborbital
+              hop, not an orbital flight.</li>
+            <li class="now"><b>18 July 2026</b> <em>Vikram-1</em> reaches orbit with four payloads. India's private
+              space era opens.</li>
+          </ol>
+        </section>
+
+        <section id="how-a-rocket-works">
+          <div class="lead-rule"></div>
+          <h2>How a rocket actually <span class="o">goes up</span></h2>
+          <p>Strip away the detail and every rocket is the same five parts, stacked nose to tail:</p>
+          <ul>
+            <li><strong>Fairing</strong> — the nose cone that shields the cargo through the atmosphere.</li>
+            <li><strong>Payload</strong> — the satellites. The only part the customer cares about.</li>
+            <li><strong>Interstage</strong> — the joint that lets a spent stage be dropped.</li>
+            <li><strong>Stage</strong> — a section of propellant with its own engine.</li>
+            <li><strong>Engine</strong> — where the thrust is actually made.</li>
+          </ul>
+
+          <h3>Thrust is just Newton's third law</h3>
+          <p>Propellant burns in a combustion chamber, the hot gas is squeezed through a nozzle, and it leaves at
+            enormous speed. Gas goes <strong>down</strong>, so the rocket is pushed <strong>up</strong>. That exhaust
+            jet <em>is</em> the thrust — there is nothing else pushing.</p>
+          <p>A car engine burns fuel with air to turn wheels. A jet burns fuel with air scooped from the sky. A rocket
+            has to <strong>carry its own oxidiser</strong>, because there is no air where it is going. That single
+            requirement shapes everything else about the vehicle.</p>
+
+          <h3>Why it drops its stages</h3>
+          <p>Once a stage has burned through its propellant, the empty casing is <strong>dead weight</strong> — mass the
+            remaining engines still have to push. So the rocket throws it away mid-flight and gets lighter and faster
+            for the same thrust. That is the whole reason launch vehicles are built in segments instead of as one tall
+            tube.</p>
+          <div class="callout">
+            <div class="h">Think like an engineer</div>
+            <p>Don't carry what you don't need. Every kilogram of dead weight is speed you lose.</p>
+          </div>
+
+          <h3>The bit most people get wrong</h3>
+          <p>Reaching orbit is not about height. It is about <strong>sideways speed</strong>: roughly
+            <strong>28,000 km/h</strong>, or 7.8 km every second — Delhi to Mumbai in under three minutes. Going
+            straight up and stopping just means falling back down. Orbit is moving sideways so fast that as you fall,
+            you keep missing the planet.
+          </p>
+        </section>
+
+        <section id="solid-vs-liquid">
+          <div class="lead-rule"></div>
+          <h2>Solid vs liquid: <span class="o">two ways to burn</span></h2>
+          <p>How a rocket carries its oxidiser splits every launch vehicle into two families. Vikram-1 is interesting
+            because it uses <strong>both</strong>.</p>
+
+          <div class="tablewrap">
+            <table>
+              <caption>Solid vs liquid propulsion, compared</caption>
+              <thead>
+                <tr>
+                  <th scope="col">&nbsp;</th>
+                  <th scope="col" class="solid">Solid</th>
+                  <th scope="col">Liquid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">What's inside</th>
+                  <td>One rubbery block — fuel and oxidiser pre-mixed and cast into the casing, with a hollow core that
+                    burns outward.</td>
+                  <td>Two tanks kept apart, pumped in and mixed only inside the combustion chamber.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Once you light it</th>
+                  <td>It burns to the end. No throttle, no off switch.</td>
+                  <td>Throttle it, shut it down, relight it — as many times as the mission needs.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Specific impulse</th>
+                  <td>≈ 250–280 s</td>
+                  <td>≈ 300–450 s</td>
+                </tr>
+                <tr>
+                  <th scope="row">Moving parts</th>
+                  <td>Almost none. Sits ready for years.</td>
+                  <td>Turbopumps, valves, kilometres of pipe.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Best at</th>
+                  <td>Brute punch off the launch pad.</td>
+                  <td>Precision — hitting the <em>exact</em> orbit.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><em>Specific impulse</em> is how long one kilogram of propellant can make one kilogram of thrust. Higher
+            means thriftier.</p>
+
+          <h3>Vikram-1 uses both, on purpose</h3>
+          <ul>
+            <li><strong>Stages 1–3 — solid (Kalam-1200 / Kalam-250 / Kalam-100).</strong> Roughly 1,000 kN, 250 kN and
+              100 kN of thrust. The first stage is about 11 m long and holds around 30 tonnes of propellant. Nothing to
+              fail, everything to shove.</li>
+            <li><strong>Stage 4 — liquid (four Raman-1 engines, ~3.4 kN total).</strong> Hypergolic propellants that
+              ignite on contact, and the ability to <strong>relight in vacuum</strong> so each satellite is dropped in
+              exactly the right place.</li>
+          </ul>
+          <p>Solids get you off the ground. Liquids get you where you meant to go.</p>
+        </section>
+
+        <section id="metal-3d-printing">
+          <div class="lead-rule"></div>
+          <h2>Now we print <span class="o">metal</span></h2>
+          <p>This is not the plastic printer in a school lab. A laser <strong>melts metal powder</strong> — steel,
+            titanium, nickel superalloy — into a layer <strong>20–60 microns</strong> thick, thinner than a human hair.
+            Repeat a few thousand times and a solid part grows out of a tray of dust.</p>
+          <p>There are two families worth knowing:</p>
+          <ul>
+            <li><strong>Powder bed fusion (LPBF).</strong> A laser scans a flat bed of powder. Best for fine internal
+              detail — injectors, cooling channels.</li>
+            <li><strong>Directed energy deposition (DED), or blown powder.</strong> Powder is sprayed into the laser
+              beam at the part. Best for large structures and for repairing worn hardware.</li>
+          </ul>
+
+          <figure>
+            <img src="assets/Metal%203D%20Printing.jpg" width="1200" height="675" loading="lazy" decoding="async"
+              alt="A directed energy deposition print head: a laser melts metal powder blown onto a curved steel part, throwing sparks">
+            <figcaption>Directed energy deposition — powder blown into a laser spot, fused onto the part.</figcaption>
+          </figure>
+
+          <h3>Why rocket engines specifically</h3>
+          <ul>
+            <li><strong>Channels no drill can reach.</strong> Cooling passages can be curled inside the chamber wall
+              itself, which is impossible to machine or weld conventionally.</li>
+            <li><strong>Hundreds of parts become one.</strong> Every joint deleted is a leak that cannot happen.</li>
+            <li><strong>Months become days.</strong> Change the file, print the new version tomorrow.</li>
+          </ul>
+          <p>Skyroot's <strong>Raman-1</strong> is described as India's first fully 3D-printed orbital engine, and
+            printing cut its build time by roughly <strong>95%</strong>. That is the engine that put four satellites in
+            the right place.</p>
+          <p class="byline" style="text-transform:none">But printing is not magic — engineers still qualification-test
+            printed hardware exhaustively before it ever flies.</p>
+        </section>
+
+        <section id="build-your-own">
+          <div class="lead-rule"></div>
+          <h2>Build one yourself — <span class="o">today</span></h2>
+          <p>You do not need a launch pad. The engineering loop that Skyroot ran with a much bigger budget is the same
+            one you can run on a table: <strong>build it, measure it, change one thing, measure again.</strong></p>
+
+          <div class="callout">
+            <div class="h">The challenge</div>
+            <p><strong>Can you design a rocket that stays in the air longer than your friend's?</strong><br>
+              You get: one sheet of paper, one straw, tape, scissors.</p>
+          </div>
+
+          <h3>The build</h3>
+          <ol class="steps">
+            <li><strong>Roll the body.</strong> Wrap a strip of paper around the straw to make a tube slightly wider
+              than it, and tape the seam so it still slides freely.</li>
+            <li><strong>Seal the nose.</strong> Fold and tape one end completely shut. If air escapes past the nose, it
+              will not launch.</li>
+            <li><strong>Add fins.</strong> Cut and tape two or three fins to the open end. Fins belong at the
+              <em>tail</em>.
+            </li>
+            <li><strong>Launch it.</strong> Slide it onto the straw, one hard consistent breath, and time the flight.
+            </li>
+            <li><strong>Change exactly one thing.</strong> Nose shape, fin shape, or mass — never two at once. Same
+              straw, same launch, same way of measuring.</li>
+          </ol>
+          <p>Change two things at once and you will not know which one worked. That is the secret of every science
+            experiment, and it is the entire reason this activity exists.</p>
+
+          <h3>It flew badly? Good — that's data</h3>
+          <div class="tablewrap">
+            <table>
+              <caption>Straw rocket troubleshooting</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Symptom</th>
+                  <th scope="col">What it means</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Wobbles &amp; tumbles</th>
+                  <td>Unstable — fins too small, or too far forward. Use bigger fins, right at the tail.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Drops like a stone</th>
+                  <td>Too heavy at the nose. Take the paperclip off and fly it again.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Goes far, not long</th>
+                  <td>Launch angle too flat. You want hang time — aim steeper.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Where it goes from here</h3>
+          <ol>
+            <li><strong>Today</strong> — straw rocket. Paper, tape, one breath, indoors.</li>
+            <li><strong>This weekend</strong> — water or stomp rocket. A bottle and a pump; 50 m+ outdoors.</li>
+            <li><strong>Tonight, free</strong> — <a href="https://openrocket.info/" rel="noopener">OpenRocket</a>. Design
+              a real rocket and fly it a hundred times before you cut anything.</li>
+            <li><strong>This year</strong> — a club launch. Engine-powered model rockets need a licence in India, so
+              clubs and school competitions fly them; you bring the design.</li>
+          </ol>
+        </section>
+
+        <section id="the-zine">
+          <div class="lead-rule"></div>
+          <h2>Get the printable teardown</h2>
+          <p>The whole thing exists as a four-page A5 zine, designed to be printed and kept. Every page is free, in
+            print-ready <strong>PNG (300 dpi)</strong> and <strong>SVG</strong>.</p>
+
+          <ul class="cards">
+            <li class="card">
+              <a href="p1-cover.html"><img src="exports/thumb/vikram-1-p1-cover.png" width="560" height="793"
+                  loading="lazy" decoding="async" alt="Page 1 of the Vikram-1 teardown: the cover"></a>
+              <div class="body">
+                <span class="n">Page 1</span>
+                <h3><a href="p1-cover.html">The hook</a></h3>
+                <p>What Vikram-1 is, the mission card, and the timeline from 2018 to orbit.</p>
+                <span class="dl"><a href="exports/png/vikram-1-p1-cover.png" download>PNG</a><a
+                    href="exports/svg/vikram-1-p1-cover.svg" download>SVG</a></span>
+              </div>
+            </li>
+            <li class="card">
+              <a href="p2-how-a-rocket-works.html"><img
+                  src="exports/thumb/vikram-1-p2-how-a-rocket-works.png" width="560" height="793" loading="lazy"
+                  decoding="async" alt="Page 2 of the Vikram-1 teardown: how a rocket works"></a>
+              <div class="body">
+                <span class="n">Page 2</span>
+                <h3><a href="p2-how-a-rocket-works.html">How a rocket works</a></h3>
+                <p>The rocket blown apart into five labelled parts, thrust, and why stages are dropped.</p>
+                <span class="dl"><a href="exports/png/vikram-1-p2-how-a-rocket-works.png" download>PNG</a><a
+                    href="exports/svg/vikram-1-p2-how-a-rocket-works.svg" download>SVG</a></span>
+              </div>
+            </li>
+            <li class="card">
+              <a href="p3-solid-vs-liquid-and-3d-printing.html"><img
+                  src="exports/thumb/vikram-1-p3-solid-vs-liquid-and-3d-printing.png" width="560" height="793"
+                  loading="lazy" decoding="async"
+                  alt="Page 3 of the Vikram-1 teardown: solid vs liquid propulsion and metal 3D printing"></a>
+              <div class="body">
+                <span class="n">Page 3</span>
+                <h3><a href="p3-solid-vs-liquid-and-3d-printing.html">Solid vs liquid &amp; metal printing</a></h3>
+                <p>The propulsion showdown, and how engines are grown out of metal powder.</p>
+                <span class="dl"><a href="exports/png/vikram-1-p3-solid-vs-liquid-and-3d-printing.png"
+                    download>PNG</a><a href="exports/svg/vikram-1-p3-solid-vs-liquid-and-3d-printing.svg"
+                    download>SVG</a></span>
+              </div>
+            </li>
+            <li class="card">
+              <a href="p4-build-your-own.html"><img src="exports/thumb/vikram-1-p4-build-your-own.png" width="560"
+                  height="793" loading="lazy" decoding="async"
+                  alt="Page 4 of the Vikram-1 teardown: build your own rocket"></a>
+              <div class="body">
+                <span class="n">Page 4</span>
+                <h3><a href="p4-build-your-own.html">Your turn</a></h3>
+                <p>The straw-rocket experiment, troubleshooting, and where to go next.</p>
+                <span class="dl"><a href="exports/png/vikram-1-p4-build-your-own.png" download>PNG</a><a
+                    href="exports/svg/vikram-1-p4-build-your-own.svg" download>SVG</a></span>
+              </div>
+            </li>
+          </ul>
+          <a class="btn" href="../">Read all four in the page viewer &rarr;</a>
+        </section>
+
+        <section id="faq">
+          <div class="lead-rule"></div>
+          <h2>Frequently asked questions</h2>
+          <div class="faq">
+            <details>
+              <summary>What is Vikram-1?</summary>
+              <div class="a">
+                <p>Vikram-1 is a four-stage, expendable small-lift orbital launch vehicle built by Skyroot Aerospace, a
+                  private Indian company based in Hyderabad. It stands about 22 metres tall, is 1.7 metres in diameter,
+                  and is designed to carry up to 350 kg of small satellites to low Earth orbit. It is named after Dr
+                  Vikram Sarabhai, the physicist who founded India's space programme.</p>
+              </div>
+            </details>
+            <details>
+              <summary>When did Vikram-1 launch and was it successful?</summary>
+              <div class="a">
+                <p>Vikram-1 launched on 18 July 2026 from the Satish Dhawan Space Centre at Sriharikota on a
+                  demonstration flight named Aagaman. It reached orbit successfully, making it the first privately
+                  developed Indian launch vehicle to do so, and delivered four payloads towards an orbit of roughly 450
+                  km.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Who built Vikram-1?</summary>
+              <div class="a">
+                <p>Skyroot Aerospace, founded in 2018 by Pawan Kumar Chandana and Naga Bharath Daka, both former ISRO
+                  engineers. The company first flew the suborbital Vikram-S in November 2022, which was India's first
+                  privately built rocket to fly at all.</p>
+              </div>
+            </details>
+            <details>
+              <summary>How many stages does Vikram-1 have?</summary>
+              <div class="a">
+                <p>Four. The first three are solid-propellant stages called Kalam-1200, Kalam-250 and Kalam-100,
+                  producing roughly 1,000 kN, 250 kN and 100 kN of thrust. The fourth is a liquid-propellant orbital
+                  adjustment module powered by a cluster of four Raman-1 engines producing about 3.4 kN in total.</p>
+              </div>
+            </details>
+            <details>
+              <summary>What is the difference between solid and liquid rocket propellant?</summary>
+              <div class="a">
+                <p>In a solid motor the fuel and oxidiser are pre-mixed into one rubbery block cast into the casing. It
+                  is simple, has almost no moving parts and can be stored ready for years, but once lit it cannot be
+                  throttled or shut down; it burns to the end. A liquid engine keeps fuel and oxidiser in separate tanks
+                  and pumps them into a combustion chamber, so it can be throttled, shut down and restarted, and it is
+                  more efficient — roughly 300 to 450 seconds of specific impulse versus 250 to 280 for solids — at the
+                  cost of turbopumps, valves and complex plumbing. Vikram-1 uses solid stages for brute lift and a
+                  liquid stage for precise orbital insertion.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Is Vikram-1 3D printed?</summary>
+              <div class="a">
+                <p>Parts of it are. The fourth-stage Raman-1 engine is described by Skyroot as India's first fully
+                  3D-printed orbital engine, and printing cut its production time by roughly 95%. Metal 3D printing lets
+                  engineers grow cooling channels inside engine walls that no drill could reach, and collapse hundreds
+                  of welded parts into one piece.</p>
+              </div>
+            </details>
+            <details>
+              <summary>How fast does a rocket have to go to reach orbit?</summary>
+              <div class="a">
+                <p>About 28,000 km/h, or roughly 7.8 km every second, for low Earth orbit. The important part is that
+                  this speed is sideways, not upward. Going straight up only makes you fall back down; orbit means
+                  moving sideways fast enough that you keep missing the Earth as you fall.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Why does a rocket drop its stages?</summary>
+              <div class="a">
+                <p>Once a stage has burned its propellant, the empty casing is dead weight that the remaining engines
+                  still have to accelerate. Dropping it means the rest of the rocket gets lighter and therefore faster
+                  for the same thrust. That is why launch vehicles are built in stages rather than as one tall tube.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Why does Vikram-1 matter for India?</summary>
+              <div class="a">
+                <p>It is the first time an Indian company, rather than the national space agency ISRO, has put a payload
+                  into orbit. It signals that India now has a private launch industry capable of offering small
+                  satellite operators a dedicated ride rather than a shared one, and it validates manufacturing
+                  techniques such as metal 3D printing in flight hardware.</p>
+              </div>
+            </details>
+            <details>
+              <summary>Can I use this teardown in a classroom?</summary>
+              <div class="a">
+                <p>Yes. The four-page teardown is free to read online, and is published as print-ready A5 PNG and SVG
+                  files for classroom handouts. It includes a controlled-variable straw-rocket experiment with a
+                  troubleshooting guide, aimed at secondary students and above.</p>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section id="sources">
+          <div class="lead-rule"></div>
+          <h2>Sources</h2>
+          <p>Figures here are drawn from Skyroot Aerospace, ISRO and public reporting. Where sources disagree — vehicle
+            height is variously given as 22 m and 24 m — we have said so rather than picking silently.</p>
+          <ul class="sources">
+            <li><a href="https://www.skyroot.in/" rel="noopener">Skyroot Aerospace</a> — the manufacturer.</li>
+            <li><a href="https://en.wikipedia.org/wiki/Vikram-1" rel="noopener">Vikram-1 — Wikipedia</a></li>
+            <li><a href="https://space.skyrocket.de/doc_lau/vikram-1.htm" rel="noopener">Gunter's Space Page —
+                Vikram-1</a></li>
+            <li><a
+                href="https://www.space.com/space-exploration/launches-spacecraft/skyroot-aerospace-india-first-private-orbital-launch-vikram-1"
+                rel="noopener">Space.com — launch report</a></li>
+            <li><a
+                href="https://3dprintingindustry.com/news/skyroots-vikram-1-reaches-orbit-on-indias-first-fully-3d-printed-rocket-engine-253353/"
+                rel="noopener">3D Printing Industry — Vikram-1's 3D-printed engine</a></li>
+            <li><a href="https://www.jpl.nasa.gov/edu/resources/lesson-plan/soda-straw-rockets/" rel="noopener">NASA JPL
+                Education — Soda-Straw Rockets</a> (the activity on page 4)</li>
+            <li><a href="https://openrocket.info/" rel="noopener">OpenRocket</a> — free model-rocket simulator.</li>
+          </ul>
+          <p class="byline" style="text-transform:none">Diagrams and photographs are used for education. The
+            commemorative stamp on page 1 is original artwork, not an official postal issue. The engine schematic on
+            page 2 is an unofficial infographic of the SpaceX Raptor by techsight.co, after Wikipedia, used to show what
+            a fully labelled real engine looks like — Vikram-1's own engines are far smaller.</p>
+        </section>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <p><strong>BuildBirds</strong> — free, printable engineering teardowns for makers, students and classrooms.</p>
+      <p class="fine">TearDown 001 &middot; Vikram-1 &middot; Published 9 September 2026 &middot; Made for makers,
+        educational use.<br>
+        Follow <a href="https://www.instagram.com/buildbirds.in/" rel="noopener">@buildbirds.in</a> on Instagram, or
+        join the BuildBirds WhatsApp channel for new missions.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

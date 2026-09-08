@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://buildbirds.chetnaverse.com/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png</image:loc>
+      <image:title>TearDown 001 — Vikram-1, India's first private orbital rocket</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p1-cover.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/png/vikram-1-p1-cover.png</image:loc>
+      <image:title>Vikram-1 mission card, specifications and timeline</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/png/vikram-1-p2-how-a-rocket-works.png</image:loc>
+      <image:title>How a rocket works — parts, thrust and staging</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p3-solid-vs-liquid-and-3d-printing.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/png/vikram-1-p3-solid-vs-liquid-and-3d-printing.png</image:loc>
+      <image:title>Solid vs liquid rocket propulsion, and metal 3D printing</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p4-build-your-own.html</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/png/vikram-1-p4-build-your-own.png</image:loc>
+      <image:title>Build your own rocket — the straw rocket experiment</image:title>
+    </image:image>
+  </url>
+
+</urlset>

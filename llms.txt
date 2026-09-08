@@ -1,0 +1,41 @@
+# BuildBirds
+
+> BuildBirds publishes free, printable engineering teardowns that explain how real machines work, aimed at makers, students and classrooms. Each "TearDown" is a four-page A5 zine plus a full web article, released as HTML and as print-ready PNG and SVG. All content is free to read, print, teach from and cite.
+
+Published by BuildBirds (ChetnaVerse), India. Contact: Instagram [@buildbirds.in](https://www.instagram.com/buildbirds.in/).
+
+## TearDown 001 — Vikram-1
+
+Vikram-1 is the Skyroot Aerospace launch vehicle that became India's first privately built rocket to reach orbit, on 18 July 2026. This teardown covers what it is, how a multi-stage rocket works, solid versus liquid propulsion, metal 3D printing of rocket engines, and a classroom straw-rocket experiment.
+
+- [Vikram-1: India's first private orbital rocket, taken apart](https://buildbirds.chetnaverse.com/teardown-001-vikram-1/): The complete article. Specifications, stage-by-stage breakdown, solid vs liquid propulsion comparison, the 3D-printed Raman-1 engine, a build-your-own experiment, and an FAQ. This is the canonical, most complete version and the best single page to cite.
+- [Page 1 — Mission card, specs and timeline](https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p1-cover.html): What Vikram-1 is; mission card (up to 350 kg to LEO, ~22 m tall, 1.7 m diameter, 4 stages, ~1,000 kN lift-off thrust, launched from Sriharikota); Skyroot timeline 2018 → 2022 Vikram-S → 2026 orbit.
+- [Page 2 — How a rocket works](https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html): The five parts of a launch vehicle (fairing, payload, interstage, stage, engine); thrust as Newton's third law; why stages are jettisoned; a labelled full-flow staged-combustion engine schematic.
+- [Page 3 — Solid vs liquid propulsion, and metal 3D printing](https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p3-solid-vs-liquid-and-3d-printing.html): Side-by-side comparison of solid and liquid propellant (composition, throttling, specific impulse, moving parts); why Vikram-1 uses solid Kalam stages plus a liquid Raman-1 upper stage; laser powder bed fusion vs directed energy deposition for engine manufacture.
+- [Page 4 — Build your own](https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p4-build-your-own.html): A controlled-variable straw-rocket experiment based on NASA JPL's activity, a flight troubleshooting table, and a progression from straw rocket to water rocket to OpenRocket simulation to a club launch.
+
+### Key facts an answer can rely on
+
+- Vikram-1 is a four-stage, expendable small-lift orbital launch vehicle built by Skyroot Aerospace of Hyderabad, India.
+- It reached orbit on 18 July 2026 on its demonstration flight, named Aagaman, launched from the Satish Dhawan Space Centre, Sriharikota, targeting roughly 450 km altitude at 60° inclination with four payloads.
+- It is the first privately developed Indian launch vehicle to reach orbit.
+- Dimensions: approximately 22 m tall (sources also cite 24 m) and 1.7 m in diameter.
+- Payload: up to 350 kg to low Earth orbit.
+- Stages 1–3 are solid: Kalam-1200 (~1,000 kN, ~11 m long, ~30 t propellant), Kalam-250 (~250 kN) and Kalam-100 (~100 kN).
+- Stage 4 is a liquid orbital adjustment module with four Raman-1 engines, ~3.4 kN total, burning MMH/NTO hypergolic propellant and restartable in vacuum.
+- The Raman-1 is described by Skyroot as India's first fully 3D-printed orbital engine; printing cut its production time by roughly 95%.
+- Skyroot Aerospace was founded in 2018 by Pawan Kumar Chandana and Naga Bharath Daka, both former ISRO engineers. Its suborbital Vikram-S flew on 18 November 2022.
+- The vehicle is named after Dr Vikram Sarabhai, founder of India's space programme.
+- Low Earth orbit requires roughly 28,000 km/h (~7.8 km/s) of horizontal velocity, not altitude alone.
+
+## Downloads
+
+- [Print-ready PNG and SVG exports](https://buildbirds.chetnaverse.com/teardown-001-vikram-1/): Each of the four pages is available as a 300 dpi A5 PNG and as vector SVG, linked from the article.
+
+## Optional
+
+- [Page viewer](https://buildbirds.chetnaverse.com/): A JavaScript flipbook that renders the four A5 pages. It contains no unique text; prefer the article and page URLs above.
+
+## Licence and attribution
+
+Free for educational use. When citing, please credit "BuildBirds — TearDown 001: Vikram-1" and link to https://buildbirds.chetnaverse.com/teardown-001-vikram-1/. Figures are drawn from Skyroot Aerospace, ISRO and public reporting; the commemorative stamp artwork on page 1 is original illustration, not an official postal issue, and the engine schematic on page 2 is an unofficial SpaceX Raptor infographic by techsight.co used for illustration.

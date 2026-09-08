@@ -1,28 +1,28 @@
 {
   "brand": "BuildBirds",
-  "title": "TearDown 01 — Vikram-1",
+  "title": "TearDown 001 — Vikram-1",
   "pageWidth": "148mm",
   "pageHeight": "210mm",
   "pages": [
     {
       "title": "Cover",
       "subtitle": "India's next leap into space",
-      "file": "./TearDown-001 Vikram-1/teardown-p1-cover.html"
+      "file": "./teardown-001-vikram-1/p1-cover.html"
     },
     {
-      "title": "The Machine",
-      "subtitle": "Stage by stage",
-      "file": "./TearDown-001 Vikram-1/teardown-p2-machine.html"
+      "title": "The Teardown",
+      "subtitle": "How a rocket works",
+      "file": "./teardown-001-vikram-1/p2-how-a-rocket-works.html"
     },
     {
-      "title": "The Showdown",
-      "subtitle": "How it stacks up",
-      "file": "./TearDown-001 Vikram-1/teardown-p3-showdown.html"
+      "title": "The Rabbit Hole",
+      "subtitle": "Solid vs liquid, and metal 3D printing",
+      "file": "./teardown-001-vikram-1/p3-solid-vs-liquid-and-3d-printing.html"
     },
     {
-      "title": "Do Something",
-      "subtitle": "Build your own",
-      "file": "./TearDown-001 Vikram-1/teardown-p4-do.html"
+      "title": "Your Turn",
+      "subtitle": "Build your own rocket",
+      "file": "./teardown-001-vikram-1/p4-build-your-own.html"
     }
   ]
 }

@@ -1,4 +1,63 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Teardown Mission 001 — P2 — The Teardown</title>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How a Rocket Works: Parts, Thrust and Staging Explained — TearDown 001, Page 2 | BuildBirds</title>
+<meta name="description" content="Page 2 of the Vikram-1 teardown: a rocket blown apart into five labelled parts, how thrust works via Newton's third law, why rockets drop stages mid-flight, and a fully labelled real engine schematic. Free printable A5.">
+<link rel="canonical" href="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html">
+<meta name="author" content="BuildBirds">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="prev" href="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p1-cover.html">
+<link rel="next" href="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p3-solid-vs-liquid-and-3d-printing.html">
+<link rel="icon" href="../logo.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BuildBirds">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="How a rocket works — parts, thrust and staging — BuildBirds TearDown 001">
+<meta property="og:description" content="Page 2 of the Vikram-1 teardown: a rocket blown apart into five labelled parts, how thrust works via Newton's third law, why rockets drop stages mid-flight, and a fully labelled real engine schematic. Free printable A5.">
+<meta property="og:url" content="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html">
+<meta property="og:image" content="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How a rocket works — parts, thrust and staging — BuildBirds TearDown 001">
+<meta name="twitter:description" content="Page 2 of the Vikram-1 teardown: a rocket blown apart into five labelled parts, how thrust works via Newton's third law, why rockets drop stages mid-flight, and a fully labelled real engine schematic. Free printable A5.">
+<meta name="twitter:image" content="https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Article", "LearningResource"],
+      "headline": "How a rocket works — parts, thrust and staging",
+      "description": "Page 2 of the Vikram-1 teardown: a rocket blown apart into five labelled parts, how thrust works via Newton's third law, why rockets drop stages mid-flight, and a fully labelled real engine schematic. Free printable A5.",
+      "url": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html",
+      "mainEntityOfPage": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html",
+      "image": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/exports/vikram-1-social-card.png",
+      "datePublished": "2026-09-09",
+      "dateModified": "2026-09-09",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "position": 2,
+      "learningResourceType": "Printable teardown page",
+      "educationalLevel": "Secondary and above",
+      "author": { "@type": "Organization", "name": "BuildBirds", "url": "https://buildbirds.chetnaverse.com/" },
+      "publisher": { "@type": "Organization", "name": "BuildBirds", "url": "https://buildbirds.chetnaverse.com/",
+        "logo": { "@type": "ImageObject", "url": "https://buildbirds.chetnaverse.com/logo.png" } },
+      "isPartOf": { "@type": "Article", "@id": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/#article",
+        "name": "Vikram-1: India's first private orbital rocket, taken apart", "url": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/" },
+      "about": [
+        { "@type": "Thing", "name": "Vikram-1", "sameAs": "https://en.wikipedia.org/wiki/Vikram-1" },
+        { "@type": "Organization", "name": "Skyroot Aerospace" }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "BuildBirds", "item": "https://buildbirds.chetnaverse.com/" },
+        { "@type": "ListItem", "position": 2, "name": "TearDown 001: Vikram-1", "item": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/" },
+        { "@type": "ListItem", "position": 3, "name": "How a rocket works — parts, thrust and staging", "item": "https://buildbirds.chetnaverse.com/teardown-001-vikram-1/p2-how-a-rocket-works.html" }
+      ]
+    }
+  ]
+}
+</script>
 <style>
   @page{size:A5 portrait;margin:0;}
   :root{--ink:#141210;--paper:#fff;--saffron:#EF6A1A;--blue:#123A63;--green:#1B6B4A;--muted:#6E675D;--hair:#D8D3C9;--cream:#faf4ee;
@@ -83,6 +142,23 @@
   .qr img{width:15mm;height:15mm;display:block;}
   .qr .cap{font-family:var(--mono);font-size:4.7pt;color:var(--ink);margin-top:.9mm;line-height:1.25;}
   .qr .cap b{color:var(--saffron);}
+
+  /* ---- screen-only: mobile fit, and a crawlable link path. Hidden in print, so
+     the A5 exports are byte-for-byte unaffected. ---- */
+  body{flex-direction:column;align-items:center;}
+  /* A5 is 559px wide; step it down so phones see the whole sheet. Stepped rather
+     than fluid because calc() cannot divide two lengths. `screen` is essential:
+     A5 paper is ~559px, so an unscoped max-width query would fire when printing. */
+  @media screen and (max-width:620px){ body{padding:10px;} .page{zoom:.82;} }
+  @media screen and (max-width:480px){ .page{zoom:.70;} }
+  @media screen and (max-width:420px){ .page{zoom:.63;} }
+  @media screen and (max-width:375px){ .page{zoom:.53;} }
+  .pagenav{width:148mm;max-width:100%;display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;
+    font-family:var(--sans);font-size:13px;line-height:1.3;}
+  .pagenav a{flex:1 1 12rem;text-align:center;color:#141210;background:#fff;border:1px solid #8d867a;
+    border-radius:4px;padding:9px 12px;text-decoration:none;font-weight:700;}
+  .pagenav a:hover,.pagenav a:focus-visible{background:#EF6A1A;border-color:#EF6A1A;color:#fff;}
+  @media print{ .pagenav{display:none !important;} }
 </style></head><body>
 <div class="page">
   <div class="top"><div class="s">The <span class="o">teardown</span></div><div class="folio">P2 · INSIDE</div></div>
@@ -194,4 +270,5 @@
     </div>
   </div>
   <div class="credit"><span>Data: Skyroot Aerospace / ISRO / SpaceX / public sources &middot; diagrams for education</span><span>P2 / 4</span></div>
-</div></body></html>
+</div><nav class="pagenav" aria-label="Teardown pages"><a href="p1-cover.html" rel="prev">&larr; Mission card</a><a href="./">All 4 pages &middot; full article</a><a href="p3-solid-vs-liquid-and-3d-printing.html" rel="next">Solid vs liquid &rarr;</a></nav>
+</body></html>
