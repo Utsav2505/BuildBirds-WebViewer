@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk '{ print NR\": \"length\\($0\\) }' teardown-p1-cover.html)",
+      "Bash(sort -t: -k2 -rn)",
+      "Bash(grep -o 'src=\"[^\"]\\\\{0,60\\\\}' teardown-p2-machine.html teardown-p3-showdown.html teardown-p4-do.html ../index.html)",
+      "WebSearch",
+      "Bash(ls \"/c/Program Files/Google/Chrome/Application/chrome.exe\" \"/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe\" 2>/dev/null)",
+      "Read(//c/Program Files/Google/Chrome/Application/**)",
+      "Bash(python -)",
+      "Bash(awk '{ print NR\": \"length\\($0\\) }' teardown-p2-machine.html)",
+      "Bash(python -c ' *)",
+      "Bash(python -m pip install --quiet pillow)",
+      "Bash(python -c \"from PIL import Image; print\\('pillow ok'\\)\")"
+    ]
+  }
+}
